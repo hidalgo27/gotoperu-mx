@@ -7,47 +7,58 @@
         {{--                <source src="{{asset('media/Secuencia 06.mp4')}}" type="video/mp4">--}}
         {{--            </video>--}}
         <div class="homepage-video">
-            <img src="{{asset('images/social.jpg')}}" alt="">
+            <img src="{{asset('images/machu-picchu.jpg')}}" alt="">
 
         </div>
         <div class="container h-100 mt-5 pt-5">
-            <div class="row d-flex h-100 text-center align-items-center">
-                <div class="col">
-                    <div class="row">
-                        <h2 class="h2 conte">Paquetes Turísticos Perú 2021</h2>
-                        <div class="alert-g-yellow">
-                            <h3 class="h1 fw-bold">RESERVAS HASTA POR 10% 2021/2022</h3>
-                            <p>Diseñamos tu próximo viaje a medida con todos lo protocolos de seguridad</p>
-                        </div>
-                    </div>
+            <div class="row d-flex h-100 align-items-center justify-content-between">
+                <div class="col-7">
                     <div class="row">
                         <div class="col">
-                            <a class="btn btn-g-yellow" href="#">INFORMACIÓN</a>
-                        </div>
-                        <div class="col">
-                            <a class="btn btn-g-yellow" href="#">ACTIVIDADES</a>
+                            <div class="">
+                                <h2 class="h3 fw-bold text-g-yellow">Paquetes Turísticos Perú 2021</h2>
+                                <div class="text-white">
+                                    <h3 class="display-3 font-archivo fw-bold">RESERVAS HASTA POR 10% 2021/2022</h3>
+                                    <p class="lead fw-normal">Diseñamos tu próximo viaje a medida con todos lo protocolos de seguridad</p>
+                                    <a class="btn btn-g-green text-white fw-bold" href="#">INFORMACIÓN</a>
+                                    <a class="btn btn-g-yellow text-white fw-bold" href="#">ACTIVIDADES</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col bg-white m-5 p-2">
-                    <h3 class="h2">Información gratis</h3>
-                    <form class="p-5">
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control border-1 border-g-dark" placeholder="Nombre">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="email" class="form-control border-1 border-g-dark" placeholder="Correo">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control border-1 border-g-dark" placeholder="Número">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <input type="text" class="form-control border-1 border-g-dark" placeholder="Country">
-                        </div>
-                        <div class="col-12">
-                            <a class="btn btn-g-yellow" href="#">ACTIVIDADES</a>
-                        </div>
-                    </form>
+                <div class="col-4">
+                    <div class="bg-white rounded shadow">
+                        <form class="p-4">
+                            <h3 class="fw-bold mb-3 border-bottom pb-3">Información gratis</h3>
+                            <div class="row">
+                                <div class="col-12 mb-4">
+                                    <div class="form-group">
+                                        <label for="txt_name">Nombre</label>
+                                        <input type="text" class="form-control" id="txt_name" placeholder="Nombre Completo">
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <div class="form-group">
+                                        <label for="txt_email">Nombre</label>
+                                        <input type="email" class="form-control" id="txt_email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <div class="form-group">
+                                        <label for="txt_tel">Teléfono / Celular (whatsapp)</label>
+                                        <input type="text" class="form-control" id="txt_tel" placeholder="Numero de celular">
+                                    </div>
+                                </div>
+{{--                                <div class="col-12 mb-2">--}}
+{{--                                    <input type="text" class="form-control border-1 border-g-dark" placeholder="Country">--}}
+{{--                                </div>--}}
+                                <div class="col-12">
+                                    <a class="btn btn-g-yellow text-white fw-bold d-block" href="#">ACTIVIDADES</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
