@@ -57,6 +57,9 @@ Route::get('/testimonios', [HomepageController::class, 'testimonios'])->name('te
 //responsabilidad
 Route::get('/responsabilidad-social', [HomepageController::class, 'responsabilidad'])->name('responsabilidad_path');
 
+//responsabilidad
+Route::get('/landing', [HomepageController::class, 'landing'])->name('landing_path');
+
 ////auth/callback
 //Route::get('/auth/callback', [
 //    'uses' => 'Page\HomepageController@callback',

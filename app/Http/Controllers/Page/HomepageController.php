@@ -503,4 +503,8 @@ class HomepageController extends Controller
         $nombre = $request->input('nombre');
         return "hola";
     }
+
+    public function landing(){
+        return view('page.landing.landing');
+    }
 }
