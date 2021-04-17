@@ -124,6 +124,52 @@
         </div>
     </section>
 
+    <section>
+        <div class="container">
+            <div class="row">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#d1" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Día 1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#d2" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Día 2</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#d3" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Día 3</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#d4" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Día 4</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="d1" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="row">
+                            <div class="col">
+                                <h4>Cusco y city tour</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><i class="bi bi-arrow-right"></i>An item</li>
+                                    <li class="list-group-item"><i class="bi bi-arrow-right"></i>A second item</li>
+                                    <li class="list-group-item">A third item</li>
+                                    <li class="list-group-item">A fourth item</li>
+                                    <li class="list-group-item">And a fifth one</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="d2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        d2
+                    </div>
+                    <div class="tab-pane fade" id="d3" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        d2
+                    </div>
+                    <div class="tab-pane fade" id="d4" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        d4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="my-5">
         <div class="container">
             <div class="row pb-4 justify-content-center">
