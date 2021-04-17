@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Page;
 use App\Http\Controllers\Controller;
 use App\Models\TCategoria;
 use App\Models\TDestino;
+use App\Models\THotel;
+use App\Models\THotelDestino;
 use App\Models\TPaquete;
 use App\Models\TPaqueteDestino;
 use App\Models\TPaqueteDificultad;
@@ -504,7 +506,18 @@ class HomepageController extends Controller
         return "hola";
     }
 
-    public function landing(){
-        return view('page.landing.landing');
+    public function landing($url){
+        $paquete = TPaquete::where('url', $url)->get();
+        $dificultad = TPaqueteDificultad::all();
+        $paquete_destinos = TPaqueteDestino::with('destinos')->get();
+
+        $hoteles = THotel::all();
+        $hoteles_destinos = THotelDestino::all();
+
+        $destino_menu = TDestino::all();
+
+
+        return view('page.landing.landing', compact('paquete', 'dificultad', 'paquete_destinos','hoteles','hoteles_destinos','destino_menu'));
+
     }
 }
