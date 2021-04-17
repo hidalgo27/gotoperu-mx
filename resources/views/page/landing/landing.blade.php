@@ -131,7 +131,6 @@
         </div>
     </section>
 
-
     <section class="mt-5">
         <div class="container">
             <div class="row pb-4">
@@ -471,6 +470,19 @@
         </div>
     </section>
 
+    <section>
+        <div class="container">
+            <div class="row">
+                <h5>* Notas sobre la política de aplazamiento:</h5>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">La política de aplazamiento se aplica a todas las reservas nuevas a partir del 1 de mayo de 2020.</li>
+                    <li class="list-group-item">La tarifa aérea nacional e internacional no se aplica a los términos de aplazamiento. Peru for Less utilizará las políticas de postergación y cancelación de la aerolínea. En la mayoría de los casos, se aplica un cargo por cambio de $ 20 y una diferencia en la tarifa aérea.</li>
+                    <li class="list-group-item">Unos pocos hoteles y cruceros muy selectos tienen diferentes plazos de aplazamiento. Su asesor de viajes le informará de estas excepciones en el momento de la reserva. Estos serán revisados ​​caso por caso y negociados con el hotel / crucero.</li>
+                    <li class="list-group-item">Tenga en cuenta que para grupos grandes (por ejemplo, 10 o más que viajan juntos) o presupuestos y servicios especiales, pueden aplicarse diferentes plazos de aplazamiento.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
 
     <section class="py-5 bg-white">
         <div class="container">
@@ -507,6 +519,6 @@
             </div>
         </div>
     </section>
-
+        
     @endforeach
 @endsection
