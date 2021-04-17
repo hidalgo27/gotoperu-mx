@@ -124,6 +124,58 @@
         </div>
     </section>
 
+    <section class="my-5">
+        <div class="container">
+            <div class="row pb-4 justify-content-center">
+                <div class="col-8 text-center">
+                    <h2 class="text-uppercase text-g-yellow pb-4">Viaja Seguro</h2>
+                    <p class="text">
+                        Puede viajar con toda  tranquilidad sabiendo que el siguiente  lugar está  para proteger su salud y seguridad:
+                        GoToPeru continuará monitoreando cada traslado, tour y hotel para una máxima comodidad, seguridad y disfrute.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <h3 class="h5">Mayor limpieza</h3>
+                    <p class="text">
+                        Los hoteles y el transporte se someterán a una limpieza profunda entre cada uso y las estaciones de desinfección de manos estarán disponibles en áreas seleccionadas. Se utilizarán más transacciones sin contacto, como boletos electrónicos.
+                    </p>
+                </div>
+                <div class="col text-center">
+                    <h3 class="h5 text-center">Distanciamiento social</h3>
+                    <p class="text">
+                        Los hoteles, sitios y restaurantes operarán a capacidad reducida para que sea fácil distanciarse socialmente. Además, de forma predeterminada, muchos de los traslados en nuestros paquetes de viaje son privados, como los de ida y vuelta al aeropuerto.
+                    </p>
+                </div>
+                <div class="col text-center">
+                    <h3 class="h5 text-center">Máscaras faciales</h3>
+                    <p class="text">
+                        Puede estar seguro de que el uso de una máscara es actualmente obligatorio en los espacios públicos de Perú y otros destinos de América del Sur para ayudar a prevenir la propagación del COVID-19.
+                    </p>
+                </div>
+                <div class="col text-center">
+                    <h3 class="h5 text-center">Prueba de síntomas</h3>
+                    <p class="text">
+                        Para ayudar a prevenir la propagación del coronavirus, según las pautas del gobierno, puede esperar controles de temperatura al ingresar a muchos sitios, transportes y edificios.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <h5>* Notas sobre la política de aplazamiento:</h5>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item">La política de aplazamiento se aplica a todas las reservas nuevas a partir del 1 de mayo de 2020.</li>
+                    <li class="list-group-item">La tarifa aérea nacional e internacional no se aplica a los términos de aplazamiento. Peru for Less utilizará las políticas de postergación y cancelación de la aerolínea. En la mayoría de los casos, se aplica un cargo por cambio de $ 20 y una diferencia en la tarifa aérea.</li>
+                    <li class="list-group-item">Unos pocos hoteles y cruceros muy selectos tienen diferentes plazos de aplazamiento. Su asesor de viajes le informará de estas excepciones en el momento de la reserva. Estos serán revisados ​​caso por caso y negociados con el hotel / crucero.</li>
+                    <li class="list-group-item">Tenga en cuenta que para grupos grandes (por ejemplo, 10 o más que viajan juntos) o presupuestos y servicios especiales, pueden aplicarse diferentes plazos de aplazamiento.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
     <section class="py-5 bg-white">
         <div class="container">
             <div class="row">
@@ -158,6 +210,5 @@
             </div>
         </div>
     </section>
-
 
 @stop
