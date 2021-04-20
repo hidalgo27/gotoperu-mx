@@ -419,7 +419,7 @@ class HomepageController extends Controller
     }
 
     public function landing_form(Request $request){
-        $from = 'hidalgochponce@gmail.com';
+        $from = 'info@gotoperu.com.mx';
         $nombre = $request->txt_name;
         $email = $request->txt_email;
         $telefono = $request->txt_tel;
