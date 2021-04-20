@@ -1,14 +1,15 @@
 @extends('layouts.page.app')
 @section('content')
     @foreach($paquete as $paquetes)
-    <header class="header-detail">
+    <header class="header-detail" id="home">
         <div class="overlay"></div>
         {{--            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">--}}
         {{--                <source src="{{asset('media/Secuencia 06.mp4')}}" type="video/mp4">--}}
         {{--            </video>--}}
         <div class="homepage-video">
-            <img src="{{asset('images/machu-picchu.jpg')}}" alt="">
-
+            @foreach($paquetes->imagen_paquetes->take(1) as $imagen)
+                <img src="{{$imagen->nombre}}" alt="{{$paquetes->titulo}}">
+            @endforeach
         </div>
         <div class="container h-100 mt-5 pt-5">
             <div class="row d-flex h-100 align-items-center justify-content-between">
@@ -16,12 +17,13 @@
                     <div class="row">
                         <div class="col">
                             <div class="">
-                                <h2 class="h3 fw-bold text-g-yellow">Paquetes Turísticos Perú 2021</h2>
+                                <h1 class="h3 fw-bold text-g-yellow">Paquetes Turísticos Perú 2021</h1>
                                 <div class="text-white">
-                                    <h3 class="display-4 font-archivo fw-bold">RESERVAS HASTA POR 10% 2021/2022</h3>
+                                    <h3 class="display-4 font-archivo fw-bold">RESERVA TOURS DESDE <span class="text-g-yellow">$50 USD</span></h3>
                                     <p class="lead fw-normal">Diseñamos tu próximo viaje a medida con todos lo protocolos de seguridad</p>
-                                    <a class="btn btn-g-green text-white fw-bold" href="#">INFORMACIÓN</a>
-                                    <a class="btn btn-g-yellow text-white fw-bold" href="#">ACTIVIDADES</a>
+                                    <p class="fw-bold">¡PROMOCIÓN válida hasta el 20 de mayo de 2021!</p>
+                                    <a class="btn btn-g-green text-white fw-bold" href="#informacion">INFORMACIÓN</a>
+                                    <a class="btn btn-g-yellow text-white fw-bold" href="#actividades">ACTIVIDADES</a>
                                 </div>
                             </div>
                         </div>
@@ -29,32 +31,33 @@
                 </div>
                 <div class="col-4">
                     <div class="bg-white rounded shadow">
-                        <form class="p-4">
+                        <form class="p-4" action="{{route('landing_form_path')}}" method="post">
+                            @csrf
                             <h3 class="fw-bold mb-3 border-bottom pb-3">Información gratis</h3>
                             <div class="row">
                                 <div class="col-12 mb-2">
                                     <div class="form-group">
                                         <label for="txt_name">Nombre</label>
-                                        <input type="text" class="form-control" id="txt_name" placeholder="Nombre Completo">
+                                        <input type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Nombre Completo" required>
                                     </div>
                                 </div>
                                 <div class="col-12 mb-2">
                                     <div class="form-group">
                                         <label for="txt_email">Email</label>
-                                        <input type="email" class="form-control" id="txt_email" placeholder="Email">
+                                        <input type="email" class="form-control" name="txt_email" id="txt_email" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-12 mb-2">
                                     <div class="form-group">
                                         <label for="txt_tel">Teléfono / Celular (whatsapp)</label>
-                                        <input type="text" class="form-control" id="txt_tel" placeholder="Numero de celular">
+                                        <input type="text" class="form-control" name="txt_tel" id="txt_tel" placeholder="Numero de celular" required>
                                     </div>
                                 </div>
 {{--                                <div class="col-12 mb-2">--}}
 {{--                                    <input type="text" class="form-control border-1 border-g-dark" placeholder="Country">--}}
 {{--                                </div>--}}
                                 <div class="col-12">
-                                    <a class="btn btn-g-yellow text-white fw-bold d-block" href="#">ACTIVIDADES</a>
+                                    <button type="submit" class="btn btn-g-yellow text-white fw-bold d-block">Enviar</button>
                                 </div>
                             </div>
                         </form>
@@ -72,7 +75,7 @@
             </div>
         </div>
     </header>
-    <section>
+    <section id="informacion">
         <div class="container bg-g-dark p-3 mt-5 rounded shadow">
             <div class="row align-items-center">
                 <div class="col-3">
@@ -151,7 +154,7 @@
 {{--        </div>--}}
 {{--    </section>--}}
 
-    <section class="bg-white mt-5 pt-5">
+    <section class="bg-white mt-5 pt-5" id="actividades">
         <div class="container">
             <div class="row pb-4">
                 <div class="">
@@ -218,10 +221,79 @@
                         </article>
 
                     </div>
+
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <div class="mt-4 bg-white py-3">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-12 col-md-">
+                                        <div class="row align-items-center">
+                                            <div class="col-3">
+                                                <hr>
+                                            </div>
+                                            <div class="col text-center">
+                                                <a href="{{route('detail_path', [$paquetes->url])}}" class="btn-lg btn btn-g-yellow text-white font-weight-bold">Ver mas detalles de {{$paquetes->titulo}}</a>
+                                            </div>
+                                            <div class="col-3">
+                                                <hr>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-4">
 {{--                    <h6 class="font-weight-semi-bold mb-3">Your Journey</h6>--}}
-                    <img src="{{$paquetes->imagen}}" alt="" class="w-100 rounded shadow mb-3">
+{{--                    <img src="{{$paquetes->imagen}}" alt="" class="w-100 rounded shadow mb-3">--}}
+
+                    <div class="card mb-3">
+                        <img src="{{$paquetes->imagen}}" class="card-img-top" alt="{{$paquetes->titulo}}">
+                        <div class="card-body">
+{{--                            <h5 class="card-title">Card title</h5>--}}
+{{--                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--}}
+{{--                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--}}
+                            <div class="row align-items-center">
+                                <div class="col text-end lh-1">
+                                    <span class="fw-bold h5">RESERVA</span>
+                                    <small class="d-block">desde:</small>
+                                </div>
+                                <div class="col text-center">
+                                    <span class="h4 fw-bold w-100">$50 usd</span>
+                                </div>
+                                <div class="col">
+                                    <h3><span class="badge bg-g-yellow">5 Días</span></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-g-yellow">
+                            <div class="row align-items-center my-2">
+                                <div class="col fw-bold text-white text-center lh-1 small">
+                                    Contacte con nosotros y empiece a planificar su viaje.
+                                </div>
+                                <div class="col">
+                                    <a href="#home" class="btn btn-dark fw-bold d-block">Contactar Ahora !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+{{--                    <div class="text-center mb-2 fw-bold">--}}
+{{--                        @foreach($paquetes->precio_paquetes->where('estrellas', 2)->sortBy('estrellas') as $precio)--}}
+{{--                            @if($precio->precio_d > 0)--}}
+{{--                                <small class="text-secondary">Desde</small>--}}
+{{--                                <b class="h1 text-center font-weight-bold text-danger"><sup>$</sup>{{$precio->precio_d}}</b>--}}
+{{--                                <small class="small text-secondary">USD</small>--}}
+{{--                            @else--}}
+{{--                                <span class="text-danger">--}}
+{{--                                                    Inquire--}}
+{{--                                                </span>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+
+{{--                    </div>--}}
 
 {{--                    <hr>--}}
 {{--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae consequatur impedit in nisi non nostrum omnis similique veritatis. Assumenda consequuntur error in molestias nemo obcaecati officiis repellendus vel voluptatibus!</p>--}}
@@ -231,14 +303,14 @@
                     {{--                                        <hr>--}}
 
 
-                    <p class="text-left m-0"><i data-feather="code" class="text-primary" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Code:</span> <small class="font-weight-bold text-primary">{{$paquetes->codigo}}</small></p>
-                    <p class="text-left m-0"><i data-feather="map-pin" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Destinations:</span></p>
+{{--                    <p class="text-left m-0"><i data-feather="code" class="text-primary" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Code:</span> <small class="font-weight-bold text-primary">{{$paquetes->codigo}}</small></p>--}}
+{{--                    <p class="text-left m-0"><i data-feather="map-pin" class="text-success" stroke-width="1" width="15"></i> <span class="font-weight-bold text-dark">Destinations:</span></p>--}}
 
-                    <ul class="m-0">
-                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destinos)
-                            <li class="font-weight-semi-bold text-secondary">{{ucwords(strtolower($paquete_destinos->destinos->nombre))}}</li>
-                        @endforeach
-                    </ul>
+{{--                    <ul class="m-0">--}}
+{{--                        @foreach($paquete_destinos->where('idpaquetes',$paquetes->id) as $paquete_destinos)--}}
+{{--                            <li class="font-weight-semi-bold text-secondary">{{ucwords(strtolower($paquete_destinos->destinos->nombre))}}</li>--}}
+{{--                        @endforeach--}}
+{{--                    </ul>--}}
                     {{--                                            <p>{!! $dificultades->dificultad->descripcion !!}</p>--}}
 
                 </div>
@@ -247,7 +319,7 @@
         </div>
     </section>
 
-    <section class="position-relative my-5">
+    <section class="position-relative mb-5">
         <div class="offer py-5">
             <div class="container">
                 <div class="col text-center text-white pt-5 mb-5">
@@ -320,18 +392,24 @@
         </div>
     </section>
 
-    <section>
+    <section class="my-5">
         <div class="container">
             <div class="row">
-                <h5>* Notas sobre la política de aplazamiento:</h5>
-                <ol class="list-group list-group-numbered">
-                    <li class="list-group-item">La política de aplazamiento se aplica a todas las reservas nuevas a partir del 1 de mayo de 2020.</li>
-                    <li class="list-group-item">La tarifa aérea nacional e internacional no se aplica a los términos de aplazamiento. Peru for Less utilizará las políticas de postergación y cancelación de la aerolínea. En la mayoría de los casos, se aplica un cargo por cambio de $ 20 y una diferencia en la tarifa aérea.</li>
-                    <li class="list-group-item">Unos pocos hoteles y cruceros muy selectos tienen diferentes plazos de aplazamiento. Su asesor de viajes le informará de estas excepciones en el momento de la reserva. Estos serán revisados ​​caso por caso y negociados con el hotel / crucero.</li>
-                    <li class="list-group-item">Tenga en cuenta que para grupos grandes (por ejemplo, 10 o más que viajan juntos) o presupuestos y servicios especiales, pueden aplicarse diferentes plazos de aplazamiento.</li>
-                </ol>
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        <h5 class="alert-heading fw-bold">* Notas sobre la política de aplazamiento:</h5>
+{{--                        <hr>--}}
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">La política de aplazamiento se aplica a todas las reservas nuevas a partir del 1 de mayo de 2020.</li>
+                            <li class="list-group-item">La tarifa aérea nacional e internacional no se aplica a los términos de aplazamiento. GotoPeru utilizará las políticas de postergación y cancelación de la aerolínea. En la mayoría de los casos, se aplica un cargo por cambio de $ 20 y una diferencia en la tarifa aérea.</li>
+                            <li class="list-group-item">Unos pocos hoteles y cruceros muy selectos tienen diferentes plazos de aplazamiento. Su asesor de viajes le informará de estas excepciones en el momento de la reserva. Estos serán revisados caso por caso y negociados con el hotel / crucero.</li>
+                            <li class="list-group-item">Tenga en cuenta que para grupos grandes (por ejemplo, 10 o más que viajan juntos) o presupuestos y servicios especiales, pueden aplicarse diferentes plazos de aplazamiento.</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
     @endforeach
 @endsection

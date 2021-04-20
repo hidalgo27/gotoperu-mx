@@ -47,6 +47,12 @@
 </head>
 <body data-spy="scroll" data-target="#navbar-scroll">
 <div id="app">
+    @if (session('status'))
+        <div class="alert alert-success alert-dismissible fade mb-0 show" role="alert">
+            <strong>Gracias por contactar con nosotros!</strong> Su mensaje fue enviado satisfactoriamente.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
     <div class="menu-container">
         <div class="container mt-3">

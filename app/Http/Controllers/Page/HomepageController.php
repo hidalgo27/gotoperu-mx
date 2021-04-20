@@ -418,6 +418,40 @@ class HomepageController extends Controller
         }
     }
 
+    public function landing_form(Request $request){
+        $from = 'hidalgochponce@gmail.com';
+        $nombre = $request->txt_name;
+        $email = $request->txt_email;
+        $telefono = $request->txt_tel;
+
+            try {
+                Mail::send(['html' => 'notifications.page.client-form-design'], ['nombre' => $nombre], function ($messaje) use ($email, $nombre) {
+                    $messaje->to($email, $nombre)
+                        ->subject('GotoPeru')
+                        /*->attach('ruta')*/
+                        ->from('info@gotoperu.com.mx', 'GotoPeru');
+                });
+                Mail::send(['html' => 'notifications.page.admin-form-landing'], [
+                    'nombre' => $nombre,
+                    'email' => $email,
+                    'telefono' => $telefono,
+
+                ], function ($messaje) use ($from) {
+                    $messaje->to($from, 'GotoPeru')
+                        ->subject('GotoPeru')
+//                    ->cc($from2, 'GotoPeru')
+                        /*->attach('ruta')*/
+                        ->from('info@gotoperu.com.mx', 'GotoPeru');
+                });
+
+                return redirect()->back()->with('status', 'Registro satisfactorio.');
+            }
+            catch (Exception $e){
+                return $e;
+            }
+
+    }
+
     public function packages(){
         $paquete = TPaquete::all();
         return view('page.packages', compact('paquete'));

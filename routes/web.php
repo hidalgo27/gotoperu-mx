@@ -59,6 +59,7 @@ Route::get('/responsabilidad-social', [HomepageController::class, 'responsabilid
 
 //landing
 Route::get('/landing/{url}', [HomepageController::class, 'landing'])->name('landing_path');
+Route::post('/landing/form', [HomepageController::class, 'landing_form'])->name('landing_form_path');
 
 ////auth/callback
 //Route::get('/auth/callback', [
