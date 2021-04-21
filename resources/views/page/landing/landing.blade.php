@@ -13,7 +13,7 @@
         </div>
         <div class="container h-100 mt-5 pt-5">
             <div class="row d-flex h-100 align-items-center justify-content-between">
-                <div class="col-7">
+                <div class="col-12 col-sm-7">
                     <div class="row">
                         <div class="col">
                             <div class="">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 d-none d-sm-inline-block col-sm-4">
                     <div class="bg-white rounded shadow">
                         <form class="p-4" action="{{route('landing_form_path')}}" method="post">
                             @csrf
@@ -75,13 +75,51 @@
             </div>
         </div>
     </header>
+    <section class="d-sm-none">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form class="p-4" action="{{route('landing_form_path')}}" method="post">
+                        @csrf
+                        <h3 class="fw-bold mb-3 border-bottom pb-3">Información gratis</h3>
+                        <div class="row">
+                            <div class="col-12 mb-2">
+                                <div class="form-group">
+                                    <label for="txt_name">Nombre</label>
+                                    <input type="text" class="form-control" name="txt_name" id="txt_name" placeholder="Nombre Completo" required>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <div class="form-group">
+                                    <label for="txt_email">Email</label>
+                                    <input type="email" class="form-control" name="txt_email" id="txt_email" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <div class="form-group">
+                                    <label for="txt_tel">Teléfono / Celular (whatsapp)</label>
+                                    <input type="text" class="form-control" name="txt_tel" id="txt_tel" placeholder="Numero de celular" required>
+                                </div>
+                            </div>
+                            {{--                                <div class="col-12 mb-2">--}}
+                            {{--                                    <input type="text" class="form-control border-1 border-g-dark" placeholder="Country">--}}
+                            {{--                                </div>--}}
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-g-yellow text-white fw-bold d-block">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="informacion">
         <div class="container bg-g-dark p-3 mt-5 rounded shadow">
             <div class="row align-items-center">
-                <div class="col-3">
+                <div class="col-12 col-sm-3">
                     <h4 class="text-g-yellow fw-bold text-center">VIAJES SEGUROS</h4>
                 </div>
-                <div class="col-9">
+                <div class="col-12 col-sm-9">
                     <p class="text text-white m-0">
                         Ofrecemos las mejores condiciones de reserva para este 2021 con nuestro servicio <span class="text-uppercase text-g-yellow">APLAZAMIENTO LIBRE</span>.
                         Tienen la libertad de posponer su viaje hasta 15 días antes del 31 de diciembre.
@@ -102,28 +140,28 @@
                 </div>
             </div>
             <div class="row mt-4 pb-3">
-                <div class="col text-center">
+                <div class="col-12 col-sm-6 col-md-3 text-center">
                     <i data-feather="clock" class="d-block mx-auto" width="65" height="65" stroke-width="1"></i>
                     <h3 class="h5 mt-3 fw-bold">APLAZAMIENTO LIBRE</h3>
                     <p class="text">
                         Los viajes con fechas de salida antes del 31 de diciembre de 2021 se pueden pospone hasta 10 días antes sin cargos por cambio.
                     </p>
                 </div>
-                <div class="col text-center">
+                <div class="col-12 col-sm-6 col-md-3 text-center">
                     <i data-feather="users" class="d-block mx-auto" width="65" height="65" stroke-width="1"></i>
                     <h3 class="h5 mt-3 fw-bold">TOURS PRIVADOS</h3>
                     <p class="text">
                         Podemos ayudarlo a planificar un itinerario de viaje privado. Esto significa que todos los tours serían solo usted y su grupo más el guía.
                     </p>
                 </div>
-                <div class="col text-center">
+                <div class="col-12 col-sm-6 col-md-3 text-center">
                     <i data-feather="calendar" class="d-block mx-auto" width="65" height="65" stroke-width="1"></i>
                     <h3 class="h5 mt-3 fw-bold">FECHAS FLEXIBLES</h3>
                     <p class="text">
                         ¿Se pospone, pero aún no puede comprometerse con fechas específicas? ¡No ha problema! Posponga ahora y elija sus fechas más tarde.
                     </p>
                 </div>
-                <div class="col text-center">
+                <div class="col-12 col-sm-6 col-md-3 text-center">
                     <i data-feather="pie-chart" class="d-block mx-auto" width="65" height="65" stroke-width="1"></i>
                     <h3 class="h5 mt-3 fw-bold">SIN INFLACIONES</h3>
                     <p class="text">
@@ -162,7 +200,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-12 col-md-7 order-2 order-md-1">
                     <div class="row mb-4">
                         <div class="col">
 {{--                            <h3 class="font-weight-semi-bold">Intro</h3>--}}
@@ -192,7 +230,8 @@
                                         @php $bgit = 'bg-secondary'; $bgtext = '' @endphp
                                     @endswitch
 
-                                    <div class="timeline-time"><span>Day {{$day}}</span> <span>{{$bgtext}}</span></div>
+                                    <div class="timeline-time d-none d-md-block"><span>Day {{$day}}</span> <span>{{$bgtext}}</span></div>
+                                        <div class="w-100 text-end d-md-none"><span>Day {{$day}}</span> <span>{{$bgtext}}</span></div>
                                     <a href="#">
                                         <div class="timeline-icon {{$bgit}}">
                                             <i data-feather="image" class="text-white stretched-link" stroke-width="2" width="15"></i>
@@ -245,7 +284,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4 order-1 order-md-2">
 {{--                    <h6 class="font-weight-semi-bold mb-3">Your Journey</h6>--}}
 {{--                    <img src="{{$paquetes->imagen}}" alt="" class="w-100 rounded shadow mb-3">--}}
 
@@ -338,7 +377,7 @@
 {{--                    </div>--}}
 {{--                </div>--}}
                 <div class="row text-white text-center pb-3 pt-4">
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="rounded-circle px-2 py-3 border rgba-white-8 border-3 border-info">
@@ -349,7 +388,7 @@
                         <h5 class="fw-bold mt-3">Mayor limpieza</h5>
                         <p class="small">Los hoteles y el transporte se someterán a una limpieza profunda entre cada uso y las estaciones de desinfección de manos estarán disponibles en áreas seleccionadas. Se utilizarán más transacciones sin contacto, como boletos electrónicos.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="rounded-circle px-2 py-3 border rgba-white-8 border-3 border-danger">
@@ -360,7 +399,7 @@
                         <h5 class="fw-bold mt-3">Distanciamiento social</h5>
                         <p class="small">Los hoteles, sitios y restaurantes operarán a capacidad reducida para que sea fácil distanciarse socialmente. Además, de forma predeterminada, muchos de los traslados en nuestros paquetes de viaje son privados, como los de ida y vuelta al aeropuerto.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="rounded-circle px-2 py-3 border rgba-white-8 border-3 border-success">
@@ -371,7 +410,7 @@
                         <h5 class="fw-bold mt-3">Máscaras faciales</h5>
                         <p class="small">Puede estar seguro de que el uso de una máscara es actualmente obligatorio en los espacios públicos de Perú y otros destinos de América del Sur para ayudar a prevenir la propagación del COVID-19.</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         <div class="row justify-content-center">
                             <div class="col-4">
                                 <div class="rounded-circle px-2 py-3 border rgba-white-8 border-3 border-primary">
